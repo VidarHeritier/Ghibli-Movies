@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 98vw;
+  background: black;
+  overflow-x: hidden;
+}
+h1 {
+  color: aliceblue;
+  font-size: 6rem;
+  margin: 2rem;
+  text-align: center;
+  text-shadow: 0.05rem 0.05rem 0rem red;
+  letter-spacing: 0.2rem;
+  visibility: hidden;
+}
+.title-text {
+  width: 100vw;
+}
+#ghib-cont {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  z-index: 2;
+}
+
+.card {
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  perspective: 1000px;
+  position: relative;
+  filter: drop-shadow(0.05rem 0.05rem 0rem red);
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: black;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0.5rem solid whitesmoke;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: rgb(6, 6, 6);
+  border: 0.5rem solid whitesmoke;
+  color: aliceblue;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.card-back h2 {
+  width: 100%;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.4);
+  padding-bottom: 1rem;
+  color: rgb(0, 221, 255);
+  font-size: 2.7rem;
+  margin-bottom: 3rem;
+}
+
+.card-back p {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  border-top: 1px solid rgba(245, 245, 245, 0.4);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: rgb(0, 221, 255);
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    margin: 1rem;
+  }
+
+  #ghib-cont {
+    gap: 2rem;
+  }
+
+  .card {
+    max-width: 90vw;
+    aspect-ratio: 3 / 4;
+    margin-inline: 2rem;
+  }
+
+  .card-back h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .card-back p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+
+  #ghib-cont {
+    gap: 1rem;
+  }
+
+  .card {
+    max-width: 100vw;
+    aspect-ratio: 4 / 5;
+  }
+
+  .card-back h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .card-back p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+
+  #ghib-cont {
+    gap: 1rem;
+  }
+
+  .card {
+    max-width: 100vw;
+    aspect-ratio: 4 / 5;
+  }
+
+  .card-back {
+    padding: 0.5rem;
+  }
+
+  .card-back h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-back p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/*ejglkje*/
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 98vw;
+  background-color: black;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+#welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  text-shadow: 0.05rem 0.05rem 0rem red;
+  filter: drop-shadow(0.05rem 0.05rem 1rem black);
+  color: whitesmoke;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.welcome {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
