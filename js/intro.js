@@ -1,10 +1,10 @@
 export function initializeIntro() {
   const wallpapers = [
-    "../Wallpapers/42613.jpg",
-    "../Wallpapers/42614.jpg",
-    "../Wallpapers/42615.jpg",
-    "../Wallpapers/42616.jpg",
-    "../Wallpapers/42617.jpg",
+    "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42613.jpg",
+    "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42614.jpg",
+    "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42615.jpg",
+    "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42616.jpg",
+    "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42617.jpg",
   ];
 
   document.body.style.backgroundColor = "black";
