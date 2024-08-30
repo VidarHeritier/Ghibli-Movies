@@ -43,19 +43,51 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const cardBack = document.createElement("div");
       cardBack.className = "card-back";
+
       const title = document.createElement("h2");
       title.textContent = movie.title;
-      const director = document.createElement("p");
-      director.textContent = `Director: ${movie.director}`;
-      const runtime = document.createElement("p");
-      runtime.textContent = `Runtime: ${movie.running_time} minutes`;
+
+      const directorContainer = document.createElement("div");
+      directorContainer.className = "info-container";
+      const directorLabel = document.createElement("span");
+      directorLabel.textContent = "Director:";
+      directorLabel.className = "label";
+      const directorValue = document.createElement("span");
+      directorValue.textContent = movie.director;
+      directorValue.className = "value";
+      directorContainer.appendChild(directorLabel);
+      directorContainer.appendChild(directorValue);
+
+      const releaseDateContainer = document.createElement("div");
+      releaseDateContainer.className = "info-container";
+      const releaseDateLabel = document.createElement("span");
+      releaseDateLabel.textContent = "Release Date:";
+      releaseDateLabel.className = "label";
+      const releaseDateValue = document.createElement("span");
+      releaseDateValue.textContent = movie.release_date;
+      releaseDateValue.className = "value";
+      releaseDateContainer.appendChild(releaseDateLabel);
+      releaseDateContainer.appendChild(releaseDateValue);
+
+      const runtimeContainer = document.createElement("div");
+      runtimeContainer.className = "info-container";
+      const runtimeLabel = document.createElement("span");
+      runtimeLabel.textContent = "Runtime:";
+      runtimeLabel.className = "label";
+      const runtimeValue = document.createElement("span");
+      runtimeValue.textContent = `${movie.running_time} minutes`;
+      runtimeValue.className = "value";
+      runtimeContainer.appendChild(runtimeLabel);
+      runtimeContainer.appendChild(runtimeValue);
+
       const description = document.createElement("p");
       description.classList = "description";
       description.textContent = movie.description;
 
       cardBack.appendChild(title);
-      cardBack.appendChild(director);
-      cardBack.appendChild(runtime);
+      cardBack.appendChild(directorContainer);
+      cardBack.appendChild(releaseDateContainer);
+      cardBack.appendChild(runtimeContainer);
       cardBack.appendChild(description);
 
       cardInner.appendChild(cardFront);
@@ -65,6 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       card.addEventListener("click", (event) => {
         event.stopPropagation();
         handleCardClick(card);
+        currentlyFlippedCard.style.zIndex = "999";
         centerCardInView(card);
       });
 
@@ -90,9 +123,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function centerCardInView(card) {
     const rect = card.getBoundingClientRect();
-    const scrollLeft =
-      window.pageXOffset || document.documentElement.scrollLeft;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+    const scrollTop = window.scrollX || document.documentElement.scrollTop;
 
     const cardCenterX = rect.left + rect.width / 2;
     const cardCenterY = rect.top + rect.height / 2;
