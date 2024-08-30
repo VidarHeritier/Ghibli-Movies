@@ -1,5 +1,4 @@
-// intro.js
-export const wallpapers = [
+const wallpapers = [
   "../Wallpapers/42613.jpg",
   "../Wallpapers/42614.jpg",
   "../Wallpapers/42615.jpg",
@@ -49,6 +48,7 @@ function displayWelcomeText() {
 
     setTimeout(() => {
       p.style.opacity = "1";
+      p.style.animation = "welcomeResize .5s ease-in";
     }, index * 50);
   });
 
@@ -69,7 +69,7 @@ function fadeOutWallpaper() {
   backgroundImage.style.transition = "filter 2s";
   backgroundImage.style.filter = "brightness(30%)";
 
-  ghibliContainer.style.transition = "transform 1.5s ease, opacity 1.5s ease";
+  ghibliContainer.style.transition = "transform 1.8s ease, opacity 1.8s ease";
   ghibliContainer.style.transform = "scale(0.2)";
   ghibliContainer.style.opacity = "0";
 
