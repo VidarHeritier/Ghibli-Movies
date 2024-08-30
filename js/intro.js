@@ -22,6 +22,10 @@ export function initializeIntro() {
       displayWelcomeText();
     }, 300);
   };
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY || window.scrollY;
+    backgroundImage.style.transform = `translateY(${scrollPosition * 1}px)`;
+  });
 }
 
 function displayWelcomeText() {
