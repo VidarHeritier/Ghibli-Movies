@@ -1,12 +1,12 @@
-const wallpapers = [
-  "../Wallpapers/42613.jpg",
-  "../Wallpapers/42614.jpg",
-  "../Wallpapers/42615.jpg",
-  "../Wallpapers/42616.jpg",
-  "../Wallpapers/42617.jpg",
-];
-
 export function initializeIntro() {
+  const wallpapers = [
+    "../Wallpapers/42613.jpg",
+    "../Wallpapers/42614.jpg",
+    "../Wallpapers/42615.jpg",
+    "../Wallpapers/42616.jpg",
+    "../Wallpapers/42617.jpg",
+  ];
+
   document.body.style.backgroundColor = "black";
 
   const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
