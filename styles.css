@@ -47,8 +47,7 @@ h1 {
 
 .card:hover {
   cursor: pointer;
-  filter: drop-shadow(-0.05rem -0.05rem 0.05rem white);
-  transform: scale(1.001);
+  animation: hoverEffect 0.2s forwards;
 }
 
 .card-inner {
@@ -195,6 +194,12 @@ body {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes hoverEffect {
+  100% {
+    filter: drop-shadow(-0.05rem -0.05rem 0.05rem white);
+    transform: scale(1.003);
   }
 }
 
