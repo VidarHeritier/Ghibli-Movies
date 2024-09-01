@@ -84,10 +84,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       description.classList = "description";
       description.textContent = movie.description;
 
+      const movieFacts = document.createElement("div");
+      movieFacts.classList = "movie-facts";
+
+      movieFacts.appendChild(directorContainer);
+      movieFacts.appendChild(releaseDateContainer);
+      movieFacts.appendChild(runtimeContainer);
+
       cardBack.appendChild(title);
-      cardBack.appendChild(directorContainer);
-      cardBack.appendChild(releaseDateContainer);
-      cardBack.appendChild(runtimeContainer);
+      cardBack.appendChild(movieFacts);
       cardBack.appendChild(description);
 
       cardInner.appendChild(cardFront);
