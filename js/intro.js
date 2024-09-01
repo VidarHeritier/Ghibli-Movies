@@ -1,4 +1,7 @@
 export function initializeIntro() {
+
+  window.scrollTo(0, 0);
+
   const wallpapers = [
     "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42613.jpg",
     "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42614.jpg",
@@ -7,6 +10,7 @@ export function initializeIntro() {
     "https://vidarheritier.github.io/Ghibli-Movies/Wallpapers/42617.jpg",
   ];
 
+  document.body.style.overflow = "hidden";
   document.body.style.backgroundColor = "black";
 
   const randomImage = wallpapers[Math.floor(Math.random() * wallpapers.length)];
@@ -14,6 +18,8 @@ export function initializeIntro() {
   backgroundImage.src = randomImage;
   backgroundImage.className = "background-image";
   document.body.appendChild(backgroundImage);
+
+  
 
   backgroundImage.onload = () => {
     setTimeout(() => {
@@ -28,6 +34,7 @@ export function initializeIntro() {
 }
 
 function displayWelcomeText() {
+  
   const welcomeText = "Welcome to the Ghibli movie database";
   const welcomeContainer = document.createElement("div");
 
@@ -76,7 +83,11 @@ function fadeOutWallpaper() {
   setTimeout(() => {
     ghibliContainer.style.transform = "scale(1)";
     ghibliContainer.style.opacity = "1";
+    document.body.style.overflow = "auto";
   }, 50);
 
   titleTextHide.style.visibility = "visible";
 }
+
+
+  
