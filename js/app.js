@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       cont.appendChild(card);
     });
+    
   }
 
   function handleCardClick(card) {
