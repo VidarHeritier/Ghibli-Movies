@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       cardFront.className = "card-front";
       const img = document.createElement("img");
       img.src = movie.image;
-      img.alt = movie.title;
+      img.alt = `Poster of the movie ${movie.title}`;
       cardFront.appendChild(img);
 
       const cardBack = document.createElement("div");
