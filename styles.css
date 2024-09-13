@@ -84,6 +84,12 @@ h1 {
   height: 100%;
   object-fit: cover;
   border: 0.5rem solid whitesmoke;
+  transition: filter 0.3s ease-in-out, zoom .3s ease-in-out;
+}
+
+.card-front:hover img {
+  filter: brightness(108%);
+  zoom: 170% ;
 }
 
 .card-back {
@@ -203,12 +209,7 @@ body {
     transform: scale(1);
   }
 }
-@keyframes hoverEffect {
-  100% {
-    filter: drop-shadow(-0.05rem -0.05rem 0.05rem white);
-    transform: scale(1.003);
-  }
-}
+
 
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
