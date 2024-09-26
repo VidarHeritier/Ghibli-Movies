@@ -21,6 +21,7 @@ h1 {
   text-shadow: 0.05rem 0.05rem 0rem red;
   letter-spacing: 0.2rem;
   visibility: hidden;
+  user-select: none;
 }
 .title-text {
   width: 100vw;
@@ -85,11 +86,12 @@ h1 {
   object-fit: cover;
   border: 0.5rem solid whitesmoke;
   transition: filter 0.3s ease-in-out, zoom .3s ease-in-out;
+  user-select: none;
 }
 
 .card-front:hover img {
   filter: brightness(108%);
-  zoom: 170% ;
+  zoom: 2 ;
 }
 
 .card-back {
@@ -168,6 +170,7 @@ body {
   z-index: 2;
   opacity: 1;
   transition: opacity 1s ease-in-out;
+  user-select: none;
 }
 
 .welcome {
